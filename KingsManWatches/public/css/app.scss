@@ -1,0 +1,479 @@
+@font-face {
+    src: url("../fonts/VarelaRound-Regular.ttf");
+    font-family: "VarelaRound";
+}
+
+$color-primary: #ed2d2d;
+$color-secondary: #ffc144; //#ed902d
+$color-white: #fff;
+$color-black: #141414;
+$color-black-t: rgba(0, 0, 0, .7);
+$color-black-t-lt: rgba(0, 0, 0, .4);
+$color-error: red;
+
+$screen-xs: 575px;
+$screen-sm: 767px;
+$screen-md: 991px;
+$screen-lg: 1199px;
+
+* {
+    font-family: "VarelaRound";
+    box-sizing: border-box;
+}
+
+body {
+    color: $color-black;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+//text size
+.font-xs {
+    font-size: 12px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 10px;
+    }
+}
+
+.font-small {
+    font-size: 16px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 14px;
+    }
+}
+
+.font-medium {
+    font-size: 19px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 17px;
+    }
+}
+
+.font-large {
+    font-size: 30px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 25px;
+    }
+}
+
+.font-xl {
+    font-size: 40px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 30px;
+    }
+}
+
+.font-xxl {
+    font-size: 60px;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 40px;
+    }
+}
+// /text size
+
+.form-control, .form-select {
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0 #000000;
+        border-color: $color-secondary;
+        //color: $color-black;
+    }
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-color: $color-black-t;
+}
+
+.section-padding {
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+    @media screen and (max-width: $screen-md) {
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+}
+
+.btn {
+    &:hover, &:active, &:focus, &:active:focus {
+        box-shadow: 0 0 0 0 #000;
+    }
+}
+
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
+    background-color: $color-primary;
+    color: $color-white;
+    transition: .1s opacity;
+    border: none;
+    &:hover, &:active, &:focus {
+        opacity: .75;
+        background-color: $color-primary;
+    }
+}
+
+.btn-secondary, .btn-secondary.disabled, .btn-secondary:disabled {
+    background-color: $color-secondary;
+    color: $color-black;
+    transition: .1s opacity;
+    border: none;
+    &:hover, &:active, &:focus {
+        opacity: .75;
+        background-color: $color-secondary;
+    }
+}
+
+.color-primary {
+    color: $color-primary !important;
+}
+
+.color-secondary {
+    color: $color-secondary !important;
+}
+
+// header
+#header {
+    background-color: $color-primary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .2s box-shadow;
+    z-index: 99;
+}
+
+#logo {
+    width: 170px;
+    @media screen and (max-width: $screen-md) {
+        width: 150px;
+    }
+    @media screen and (max-width: $screen-sm) {
+        width: 100px;
+    }
+}
+
+#nav {
+    & > ul {
+        @media screen and (max-width: $screen-md) {
+            display: none !important;
+        }
+        a {
+            color: $color-white;
+            transition: .1s color;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+        .active {
+            color: $color-secondary;
+        }
+    }
+}
+
+#btnSignIn {
+    background-color: $color-secondary;
+    color: $color-black;
+    border: none;
+}
+
+#hamburgerMenu {
+    display: none;
+    @media screen and (max-width: $screen-md) {
+        display: block !important;
+    }
+    a {
+        color: $color-white;
+    }
+}
+
+#sideNav {
+    a {
+        color: $color-white;
+        transition: .1s background-color, .1s color;
+        &:hover {
+            background-color: $color-white;
+            color: $color-primary;
+        }
+    }
+    .active {
+        background-color: $color-white;
+        color: $color-primary;
+    }
+}
+
+#sidenavCover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 98;
+    backdrop-filter: blur(2px);
+}
+
+#userDivFront {
+    color: $color-secondary;
+    cursor: pointer;
+}
+
+#userHoverMenu {
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    background-color: $color-black-t;
+    a, input[type=submit] {
+        border: none;
+        cursor: pointer;
+        background: none;
+        width: 100%;
+        text-align: start;
+        display: block;
+        color: $color-white !important;
+        transition: .1s color, .1s background-color;
+        &:hover {
+            background-color: $color-white;
+            color: $color-black !important;
+        }
+    }
+}
+
+// home
+#mainSlider {
+    background-color: $color-primary;
+    h1 {
+        color: $color-white;
+    }
+}
+
+#mainSliderWave {
+    path {
+        fill: $color-primary;
+    }
+}
+
+#homepageImage {
+    width: 350px;
+}
+
+#homepageForm {
+    width: 500px;
+    @media screen and (max-width: $screen-lg) {
+        width: 100%;
+    }
+    @media screen and (max-width: $screen-md) {
+        width: 500px;
+    }
+    @media screen and (max-width: $screen-sm) {
+        width: 100%;
+    }
+    .input-group-text {
+        color: $color-black;
+        background-color: $color-secondary;
+        border: none !important;
+    }
+    .form-control {
+        border: none !important;
+    }
+}
+
+#searchResults {
+    background-color: $color-white;
+    ul {
+        li {
+            color: $color-black;
+            a {
+                color: $color-black;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+// restaurants
+#restaurantsWrapper {
+    min-height: 200px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.restaurantDiv {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.restaurantText {
+    h3, li {
+        color: $color-white;
+        background-color: $color-black-t;
+    }
+}
+
+.food-categories {
+    a {
+        color: $color-black;
+    }
+    .active {
+        color: $color-secondary;
+        //font-weight: bold;
+    }
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white;
+}
+
+.loader-image {
+    width: 100px;
+    height: 100px;
+}
+
+.pagination {
+    li {
+        &:hover, &:active, &:focus, &:active:focus {
+            box-shadow: 0 0 0 0 #000;
+        }
+        &.active {
+            color: $color-white;
+            a {
+                background-color: $color-primary !important;
+                border-color: $color-primary !important;
+            }
+        }
+        a {
+            color: $color-primary;
+            &:hover, &:active, &:focus, &:active:focus {
+                box-shadow: 0 0 0 0 #000;
+                color: $color-primary;
+            }
+            &:active:focus {
+                color: $color-white !important;
+            }
+        }
+    }
+}
+
+// food
+#foodWrapper {
+    min-height: 200px;
+}
+
+.food-image {
+    width: 40%;
+}
+
+.food-text {
+    width: 55%;
+}
+
+.btn-remove {
+    color: $color-black-t;
+    &:hover {
+        color: $color-black-t;
+    }
+}
+
+// author
+#authorImage {
+    width: 370px;
+    @media screen and(max-width: $screen-xs){
+        width: 100%;
+    }
+}
+
+#authorSocials {
+    a {
+        width: 35px;
+        height: 35px;
+        color: $color-white;
+        background-color: $color-black-t;
+        transition: .1s opacity;
+        &:hover {
+            opacity: .75;
+        }
+    }
+}
+
+#portfolioLink {
+    color: $color-primary;
+}
+
+// form validation
+.border-correct {
+    //
+}
+
+.border-incorrect {
+    border: 1px solid $color-error;
+}
+
+.error-message {
+    color: $color-error;
+}
+
+.server-message {
+    width: 100%;
+    //@media screen and(max-width: $screen-md) {
+    //    width: 100%;
+    //}
+}
+
+// contact
+#contactForm, #loginForm, #registerForm {
+    width: 500px;
+    @media screen and(max-width: $screen-md) {
+        width: 100%;
+    }
+}
+
+// log in / register
+.signInFormLink {
+    color: $color-primary;
+    &:hover {
+        color: $color-primary;
+        filter: brightness(.5);
+    }
+}
+
+// footer
+#footer {
+    background-color: $color-black;
+    color: $color-white;
+    ul {
+        a {
+            color: $color-white;
+        }
+    }
+}
+
+#scrollTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    a {
+        width: 48px;
+        height: 48px;
+        color: $color-white;
+        background-color: $color-black-t;
+    }
+}
